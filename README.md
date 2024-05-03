@@ -1,0 +1,1 @@
+segitiga beserta turunan done
