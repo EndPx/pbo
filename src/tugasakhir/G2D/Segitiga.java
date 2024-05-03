@@ -12,10 +12,26 @@ import tugasakhir.Benda2D;
  * @author abaym
  */
 public class Segitiga implements Benda2D {
+    private double alas;
+    private double tinggi;
+    private double luas;
+
+    public Segitiga(double alas, double tinggi){
+        this.alas = alas;
+        this.tinggi = tinggi;
+    }
+
+    public getAlas(){
+        return alas;
+    }
+    public getTinggi(){
+        return tinggi;
+    }
 
     @Override
     public double menghitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        luas = 0.5 * alas * tinggi;   
+        return luas;
     }
     
 }
