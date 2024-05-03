@@ -12,10 +12,23 @@ import tugasakhir.Benda2D;
  * @author abaym
  */
 public class Lingkaran implements Benda2D {
+    private double jariJari;
+    private double luas;
 
+    public Lingkaran(double jariJari){
+        this.jariJari = jariJari;
+    }
+    public double getJariJari(){
+        return jariJari;
+    }
+    public double getLuas(){
+        return luas;
+    }
+    
     @Override
     public double menghitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        luas = Math.PI * Math.pow(jariJari, 2);
+        return luas;
     }
     
 }
