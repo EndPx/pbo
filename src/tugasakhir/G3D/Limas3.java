@@ -5,10 +5,41 @@
  */
 package tugasakhir.G3D;
 
+import tugasakhir.Benda3D;
+import tugasakhir.G2D.Segitiga;
+
 /**
  *
  * @author abaym
  */
-public class Limas3 {
-    
+public class Limas3 extends Segitiga implements Benda3D {
+
+    private double tinggiLisma;
+
+    public Limas3(double alas, double tinggi, double tinggiLisma) {
+        super(alas, tinggi);
+        this.tinggiLisma = tinggiLisma;
+    }
+
+    @Override
+    public double menghitungVolume() {
+        return (1.0/3) * menghitungLuas() * tinggiLisma;
+    }
+
+    public double menghitungVolume(double luasAlas) {
+        return (1.0/3) * luasAlas * tinggiLisma;
+    }
+
+    @Override
+    public double menghitungLuasPermukaan() {
+        double sisiTegak = Math.sqrt(super.getAlas() * super.getTinggi() + Math.pow(tinggiLisma,2));
+        double luasSelimut = 0.5 * sisiTegak * super.getAlas() * 3;
+        return super.menghitungLuas() + luasSelimut;
+    }
+
+    public double menghitungLuasPermukaan(double luasAlas) {
+        double sisiTegak = Math.sqrt(super.getAlas() * super.getTinggi() + Math.pow(tinggiLisma,2));
+        double luasSelimut = 0.5 * sisiTegak * super.getAlas() * 3;
+        return luasAlas + luasSelimut;
+    }
 }
