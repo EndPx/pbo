@@ -30,15 +30,19 @@ public class Balok extends PersegiPanjang implements Benda3D {
 
     @Override
     public double menghitungLuasPermukaan() {
-        double sisiTegak = Math.sqrt(super.getAlas() * super.getTinggi() + Math.pow(tinggiLisma,2));
-        double luasSelimut = 0.5 * sisiTegak * super.getAlas() * 3;
-        return super.menghitungLuas() + luasSelimut;
+        double luasPPbawah = super.menghitungLuas();
+        double luasSelimut = 4 * luasPPbawah;
+        double luasPPsamping = super.getLebar() * tinggiBalok;
+        double luasPenutup = 2 * luasPPsamping;
+        return luasSelimut + luasPenutup;
     }
 
     public double menghitungLuasPermukaan(double luasAlas) {
-        double sisiTegak = Math.sqrt(super.getAlas() * super.getTinggi() + Math.pow(tinggiLisma,2));
-        double luasSelimut = 0.5 * sisiTegak * super.getAlas() * 3;
-        return luasAlas + luasSelimut;
+        double luasPPbawah = super.menghitungLuas();
+        double luasSelimut = 4 * luasPPbawah;
+        double luasPPsamping = super.getLebar() * tinggiBalok;
+        double luasPenutup = 2 * luasPPsamping;
+        return luasSelimut + luasPenutup;
     }
 
 }
