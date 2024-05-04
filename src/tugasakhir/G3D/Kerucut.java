@@ -21,11 +21,11 @@ public class Kerucut extends Lingkaran implements Benda3D {
 
      @Override
     public double menghitungVolume() {
-        return (1.0/3) * menghitungLuas() * tinggiTabung;
+        return (1.0/3) * menghitungLuas() * tinggiKerucut;
     }
 
     public double menghitungVolume(double luasAlas) {
-        return (1.0/3) * luasAlas * tinggiTabung;
+        return (1.0/3) * luasAlas * tinggiKerucut;
     }
 
     public double menghitungLuasPermukaan() {
