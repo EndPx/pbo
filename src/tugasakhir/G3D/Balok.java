@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 package tugasakhir.G3D;
-
+import tugasakhir.Benda3D;
+import tugasakhir.G2D.PersegiPanjang;
 /**
  *
  * @author abaym
  */
-public class Balok {
+public class Balok extends PersegiPanjang  {
     
 }
