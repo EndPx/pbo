@@ -14,7 +14,7 @@ public class Balok extends PersegiPanjang implements Benda3D {
 
     private double tinggiBalok;
     
-    public Kubus(double panjang,double lebar,double tinggiBalok) {
+    public Balok(double panjang,double lebar,double tinggiBalok) {
         super(panjang,lebar);
         this.tinggiBalok = tinggiBalok;
     }
