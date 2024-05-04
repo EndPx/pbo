@@ -1,1 +1,2 @@
-segitiga beserta turunan done
+
+kurang lingkaran beserta turunan
