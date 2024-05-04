@@ -28,4 +28,17 @@ public class Balok extends PersegiPanjang implements Benda3D {
         return luasAlas * tinggiBalok;
     }
 
+    @Override
+    public double menghitungLuasPermukaan() {
+        double sisiTegak = Math.sqrt(super.getAlas() * super.getTinggi() + Math.pow(tinggiLisma,2));
+        double luasSelimut = 0.5 * sisiTegak * super.getAlas() * 3;
+        return super.menghitungLuas() + luasSelimut;
+    }
+
+    public double menghitungLuasPermukaan(double luasAlas) {
+        double sisiTegak = Math.sqrt(super.getAlas() * super.getTinggi() + Math.pow(tinggiLisma,2));
+        double luasSelimut = 0.5 * sisiTegak * super.getAlas() * 3;
+        return luasAlas + luasSelimut;
+    }
+
 }
