@@ -10,6 +10,17 @@ import tugasakhir.G2D.PersegiPanjang;
  *
  * @author abaym
  */
-public class Balok extends PersegiPanjang  {
+public class Balok extends PersegiPanjang implements Benda3D {
+    public Kubus(double panjang,double lebar) {
+        super(panjang,lebar);
+    }
+    @Override
+    public double menghitungVolume() {
+        return Math.pow(super.getSisi(), 3);
+    }
     
+    public double menghitungVolume(double luasAlas){
+        return luasAlas*super.getSisi();
+    }
+
 }
