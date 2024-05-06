@@ -12,10 +12,16 @@ import tugasakhir.Benda2D;
  * @author abaym
  */
 public class JajarGenjang implements Benda2D{
-
+    private double alas;
+    private double tinggi;
+    public JajarGenjang(double alas, double tinggi){
+        this.alas=alas;
+        this.tinggi=tinggi;
+    }
+    
     @Override
     public double menghitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return alas * tinggi;
     }
     
 }
