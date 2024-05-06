@@ -10,7 +10,7 @@ import tugasakhir.G2D.Lingkaran;
  *
  * @author abaym
  */
-public class Cincin extends Lingkaran implements Benda3D {
+public class Cincin extends Bola implements Benda3D {
 
     private double tinggiCincin;
     private double jarijariDalam;
