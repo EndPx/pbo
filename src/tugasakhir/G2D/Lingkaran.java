@@ -13,7 +13,6 @@ import tugasakhir.Benda2D;
  */
 public class Lingkaran implements Benda2D {
     private double jariJari;
-    private double luas;
 
     public Lingkaran(double jariJari){
         this.jariJari = jariJari;
@@ -21,14 +20,14 @@ public class Lingkaran implements Benda2D {
     public double getJariJari(){
         return jariJari;
     }
-    public double getLuas(){
-        return luas;
-    }
     
     @Override
     public double menghitungLuas() {
-        luas = Math.PI * Math.pow(jariJari, 2);
-        return luas;
+        return Math.PI * Math.pow(jariJari, 2);
+    }
+    
+    public double menghitungLuas(double r){
+        return Math.PI * Math.pow(r, 2);
     }
     
 }
