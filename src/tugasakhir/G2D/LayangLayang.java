@@ -12,10 +12,15 @@ import tugasakhir.Benda2D;
  * @author abaym
  */
 public class LayangLayang implements Benda2D {
+    private double d1;
+    private double d2;
+    public LayangLayang(double d1, double d2) {
+        this.d1=d1;
+        this.d2=d2;
+    }
 
     @Override
     public double menghitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0.5 * this.d1 * this.d2;
     }
-    
 }
