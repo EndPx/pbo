@@ -12,10 +12,18 @@ import tugasakhir.Benda2D;
  * @author abaym
  */
 public class Trapesium implements Benda2D{
+    private double alasBawah;
+    private double alasAtas;
+    private double tinggi;
+    public Trapesium(double alasBawah, double alasAtas, double tinggi) {
+        this.alasBawah=alasBawah;
+        this.alasAtas=alasAtas;
+        this.tinggi=tinggi;
+    }
 
     @Override
     public double menghitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0.5 * ((this.alasAtas+this.alasBawah)*this.tinggi);
     }
     
 }
