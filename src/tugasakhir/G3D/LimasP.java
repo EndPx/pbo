@@ -32,22 +32,12 @@ public class LimasP extends Persegi implements Benda3D {
 
     @Override
     public double menghitungLuasPermukaan() {
-        double luasAlas = super.menghitungLuas();
-        double kelilingAlas = 4 * super.getSisi();
-        double luasSelimut = 0.5 * kelilingAlas * getSisiTegak();
-        double luasPermukaan = luasAlas + luasSelimut;
-        return luasPermukaan;
+        double luasSelimut = 0.5 * menghitungKeliling() * Math.sqrt(Math.pow(super.getSisi(),2) + Math.pow(tinggiLimas,2));
+        return super.menghitungLuas() + luasSelimut;
     }
 
     public double menghitungLuasPermukaan(double luasAlas) {
-        double kelilingAlas = 4 * super.getSisi();
-        double luasSelimut = 0.5 * kelilingAlas * getSisiTegak();
-        double luasPermukaan = luasAlas + luasSelimut;
-        return luasPermukaan;
-    }
-
-    private double getSisiTegak() {
-        double sisiTegak = Math.sqrt(Math.pow(super.getSisi(),2) + Math.pow(tinggiLimas,2));
-        return sisiTegak;
+        double luasSelimut = 0.5 * menghitungKeliling() * Math.sqrt(Math.pow(super.getSisi(),2) + Math.pow(tinggiLimas,2));
+        return luasAlas + luasSelimut;
     }
 }
