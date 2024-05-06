@@ -11,11 +11,16 @@ import tugasakhir.Benda2D;
  *
  * @author abaym
  */
-public class Ellips implements Benda2D{
+public class Ellips implements Benda2D {
+    private double sumbuMayor;
+    private double sumbuMinor;
+    public Ellips(double sumbuMayor, double sumbuMinor) {
+        this.sumbuMayor = sumbuMayor;
+        this.sumbuMinor = sumbuMinor;
+    }
 
     @Override
     public double menghitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Math.PI * (sumbuMayor/2) * (sumbuMinor/2);
     }
-    
 }
