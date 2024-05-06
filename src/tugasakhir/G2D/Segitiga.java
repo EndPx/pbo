@@ -21,17 +21,16 @@ public class Segitiga implements Benda2D {
         this.tinggi = tinggi;
     }
 
-    public getAlas(){
+    public double getAlas(){
         return alas;
     }
-    public getTinggi(){
+    public double getTinggi(){
         return tinggi;
     }
 
     @Override
     public double menghitungLuas() {
-        luas = 0.5 * alas * tinggi;   
-        return luas;
+        return 0.5 * alas * tinggi;
     }
     
 }
