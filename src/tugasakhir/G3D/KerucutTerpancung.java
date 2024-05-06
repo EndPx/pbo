@@ -4,43 +4,37 @@
  * and open the template in the editor.
  */
 package tugasakhir.G3D;
+
 import tugasakhir.Benda3D;
-import tugasakhir.G2D.Lingkaran;
-import tugasakhir.G3D.Kerucut;
+
 /**
  *
  * @author abaym
  */
 public class KerucutTerpancung extends Kerucut implements Benda3D {
-
-    private double tinggiKerucutT;
     private double jarijariKecil;
-    
-    public Tabung(double jariJari, double tinggiKerucutT, double jarijariKecil) {
-        super(jariJari);
-        this.tinggiKerucutT = tinggiKerucutT;
+    public KerucutTerpancung(double jariJari, double tinggiKerucut, double jarijariKecil) {
+        super(jariJari, tinggiKerucut);
         this.jarijariKecil = jarijariKecil;
     }
-
+    
     @Override
     public double menghitungVolume() {
-        return (1.0/3) * Math.PI * tinggiKerucutT * ((Math.pow(super.getJariJari(),2)) + (super.getJariJari() * jarijariKecil) + (Math.pow(jarijariKecil,2)));
+        return (1.0/3) * Math.PI * super.getTinggiKerucut() * ((Math.pow(super.getJariJari(),2)) + (super.getJariJari() * jarijariKecil) + (Math.pow(jarijariKecil,2)));
     }
-
-    public double menghitungVolume(double luasAlas) {
-        return (1.0/3) * Math.PI * tinggiKerucutT * ((Math.pow(super.getJariJari(),2)) + (super.getJariJari() * jarijariKecil) + (Math.pow(jarijariKecil,2)));
-    }
-
+    
     @Override
     public double menghitungLuasPermukaan() {
-        double sisiMiring = Math.sqrt(Math.pow(super.getJariJari() - jarijariKecil,2) + Math.pow(tinggiKerucutT,2));
-        double luasPermukaan = Math.PI * sisiMiring  * (super.getJariJari() + jarijariKecil);
-        return luasPermukaan;
+        return menghitungLuas() + menghitungLuas(jarijariKecil) + Math.PI * getTinggiKerucut() * (getJariJari() + jarijariKecil);
     }
-
-    public double menghitungLuasPermukaan(double luasAlas) {
-        double sisiMiring = Math.sqrt(Math.pow(super.getJariJari() - jarijariKecil,2) + Math.pow(tinggiKerucutT,2));
-        double luasPermukaan = Math.PI * sisiMiring  * (super.getJariJari() + jarijariKecil);
-        return luasPermukaan;
+    
+    @Override
+    public double menghitungLuasPermukaan(double luasAlasBawah) {
+    double tinggi = super.getTinggiKerucut();
+    double rAtas = super.getJariJari();
+    double rBawah = jarijariKecil;
+    double sisiMiring = Math.sqrt(Math.pow(rBawah - rAtas, 2) + tinggi * tinggi);
+    double luasPermukaan = Math.PI * sisiMiring * (rAtas + rBawah) + luasAlasBawah;
+    return luasPermukaan;
     }
 }
