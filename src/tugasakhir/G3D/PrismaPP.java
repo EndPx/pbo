@@ -40,7 +40,6 @@ public class PrismaPP extends PersegiPanjang implements Benda3D{
     }
 
     public double menghitungLuasPermukaan(double luasAlas) {
-        double luasAlas = super.menghitungLuas();
         double luasSelimut1 = 2 * luasAlas;
         double luasSamping = super.getLebar() * tinggiPrismaPP;
         double luasSelimut2 = 2 * luasSamping;
