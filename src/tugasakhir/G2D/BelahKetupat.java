@@ -21,6 +21,6 @@ public class BelahKetupat implements Benda2D {
 
     @Override
     public double menghitungLuas() {
-        return (this.d1 * this.d2)/2;
+        return 0.5 * this.d1 * this.d2;
     }
 }
