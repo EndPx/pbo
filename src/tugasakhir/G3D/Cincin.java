@@ -6,6 +6,7 @@
 package tugasakhir.G3D;
 import tugasakhir.Benda3D;
 import tugasakhir.G2D.Lingkaran;
+import tugasakhir.G3D.Bola;
 /**
  *
  * @author abaym
