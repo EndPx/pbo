@@ -10,7 +10,7 @@ import tugasakhir.G2D.Lingkaran;
  *
  * @author abaym
  */
-public class KerucutTerpancung extends Lingkaran implements Benda3D {
+public class KerucutTerpancung extends Kerucut implements Benda3D {
 
     private double tinggiKerucutT;
     private double jarijariKecil;
