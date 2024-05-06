@@ -14,9 +14,13 @@ public class Kerucut extends Lingkaran implements Benda3D {
 
     private double tinggiKerucut;
     
-    public Tabung(double jariJari, double tinggiKerucut) {
+    public Kerucut(double jariJari, double tinggiKerucut) {
         super(jariJari);
         this.tinggiKerucut = tinggiKerucut;
+    }
+    
+    public double getTinggiKerucut(){
+        return tinggiKerucut;
     }
 
      @Override
