@@ -33,10 +33,4 @@ public class Tabung extends Lingkaran implements Benda3D {
         double luasPermukaan = 2 * Math.PI * super.getJariJari() * (super.getJariJari() + tinggiTabung);
         return luasPermukaan;
     }
-
-    public double menghitungLuasPermukaan(double luasAlas) {
-        double luasPermukaan = 2 * Math.PI * super.getJariJari() * (super.getJariJari() + tinggiTabung);
-        return luasPermukaan;
-    }
-    
 }
