@@ -17,10 +17,19 @@ public class Bola extends Lingkaran implements Benda3D{
     }
     @Override
     public double menghitungVolume() {
-        return (4.0 / 3.0) * Math.PI * Math.pow(getJariJari(), 3);
+        return (4.0 / 3.0) * Math.PI * Math.pow(super.getJariJari(), 3);
     }
+    
+    public double menghitungVolume(double luasLingkaran){
+        return (4.0 / 3.0) * luasLingkaran * super.getJariJari();
+    }
+    
     @Override
     public double menghitungLuasPermukaan() {
-        return 4 * Math.PI * Math.pow(getJariJari(), 2);
+        return 4 * menghitungLuas();
+    }
+    
+    public double menghitungLuasPermukaan(double luasLingkaran){
+        return 4 * luasLingkaran;
     }
 }
