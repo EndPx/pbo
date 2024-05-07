@@ -13,21 +13,18 @@ import tugasakhir.G2D.Lingkaran;
  */
 
 public class Tembereng extends Bola implements Benda3D{
-    public Tembereng(double jariJari, double tinggi) {
+    
+    private double tinggiTembereng;
+    
+    public Tembereng(double jariJari, double tinggiTembereng) {
         super(jariJari);
-        this.tinggi = tinggi;
+        this.tinggiTembereng = tinggiTembereng;
     }
-    private double tinggi;
-    public double getTinggi() {
-        return tinggi;
-    }
-    public void setTinggi(double tinggi) {
-        this.tinggi = tinggi;
-    }
+    
 
     @Override
     public double menghitungVolume() {
-        return Math.PI * Math.pow(getJariJari(), 2) * tinggi;
+        return 1 / 3 * Math.PI * Math.pow(tinggiTembereng, 2) * (3 * super.getJariJari() - tinggiTembereng);
     }
 
     @Override
