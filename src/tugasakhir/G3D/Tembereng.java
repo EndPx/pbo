@@ -12,7 +12,7 @@ import tugasakhir.G2D.Lingkaran;
  * @author abaym
  */
 
-public class Tembereng extends Lingkaran implements Benda3D{
+public class Tembereng extends Bola implements Benda3D{
     public Tembereng(double jariJari, double tinggi) {
         super(jariJari);
         this.tinggi = tinggi;
