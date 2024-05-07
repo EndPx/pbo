@@ -11,26 +11,28 @@ import tugasakhir.G2D.Lingkaran;
  *
  * @author abaym
  */
-public class Tembereng extends Lingkaran implements Benda3D{
-    public Tembereng(double jariJari, double tinggi) {
-        super(jariJari);
-        this.tinggi = tinggi;
+
+public class Tembereng implements Benda3D{
+    public Tembereng(double jariJari) {
+        this.jariJari = jariJari;
     }
-    private double tinggi;
-    public double getTinggi() {
-        return tinggi;
+    private double jariJari;
+
+    public double getJariJari() {
+        return jariJari;
     }
-    public void setTinggi(double tinggi) {
-        this.tinggi = tinggi;
+
+    public void setJariJari(double jariJari) {
+        this.jariJari = jariJari;
     }
 
     @Override
     public double menghitungVolume() {
-        return Math.PI * Math.pow(getJariJari(), 2) * tinggi;
+        return (4.0/3.0) * Math.PI * Math.pow(getJariJari(), 3);
     }
 
     @Override
     public double menghitungLuasPermukaan() {
-        return 2 * Math.PI * getJariJari() * (getJariJari() + tinggi);
+        return 4 * Math.PI * Math.pow(getJariJari(), 2);
     }
 }
