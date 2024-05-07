@@ -15,10 +15,12 @@ import tugasakhir.G2D.Lingkaran;
 public class Tembereng extends Bola implements Benda3D{
     
     private double tinggiTembereng;
+    private double derajatTembereng;
     
-    public Tembereng(double jariJari, double tinggiTembereng) {
+    public Tembereng(double jariJari, double tinggiTembereng, double derajatTembereng) {
         super(jariJari);
         this.tinggiTembereng = tinggiTembereng;
+        this.derajatTembereng = derajatTembereng;
     }
     
 
@@ -29,6 +31,6 @@ public class Tembereng extends Bola implements Benda3D{
 
     @Override
     public double menghitungLuasPermukaan() {
-        return 2 * Math.PI * getJariJari() * (getJariJari() + tinggi);
+        return derajatTembereng / 360 * Math.PI * Math.pow(super.getJariJari(), 2);
     }
 }
