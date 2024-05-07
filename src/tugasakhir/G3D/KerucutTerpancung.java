@@ -15,7 +15,7 @@ public class KerucutTerpancung extends Kerucut implements Benda3D {
     private double jarijariKecil;
     private double tinggiKerucutTerpancung;
     public KerucutTerpancung(double jariJari, double tinggiKerucutTerpancung, double jarijariKecil) {
-        super(jariJari, tinggiKerucut);
+        super(jariJari);
         this.jarijariKecil = jarijariKecil;
         this.tinggiKerucutTerpancung = tinggiKerucutTerpancung;
     }
