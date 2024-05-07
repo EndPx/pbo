@@ -13,24 +13,26 @@ import tugasakhir.Benda3D;
  */
 public class KerucutTerpancung extends Kerucut implements Benda3D {
     private double jarijariKecil;
-    public KerucutTerpancung(double jariJari, double tinggiKerucut, double jarijariKecil) {
+    private double tinggiKerucutTerpancung;
+    public KerucutTerpancung(double jariJari, double tinggiKerucutTerpancung, double jarijariKecil) {
         super(jariJari, tinggiKerucut);
         this.jarijariKecil = jarijariKecil;
+        this.tinggiKerucutTerpancung = tinggiKerucutTerpancung;
     }
     
     @Override
     public double menghitungVolume() {
-        return (1.0/3) * Math.PI * super.getTinggiKerucut() * ((Math.pow(super.getJariJari(),2)) + (super.getJariJari() * jarijariKecil) + (Math.pow(jarijariKecil,2)));
+        return (1.0/3) * Math.PI * tinggiKerucutTerpancung * ((Math.pow(super.getJariJari(),2)) + (super.getJariJari() * jarijariKecil) + (Math.pow(jarijariKecil,2)));
     }
     
     @Override
     public double menghitungLuasPermukaan() {
-        return menghitungLuas() + menghitungLuas(jarijariKecil) + Math.PI * getTinggiKerucut() * (getJariJari() + jarijariKecil);
+        return menghitungLuas() + menghitungLuas(jarijariKecil) + Math.PI * tinggiKerucutTerpancung * (getJariJari() + jarijariKecil);
     }
     
     @Override
     public double menghitungLuasPermukaan(double luasAlasBawah) {
-    double tinggi = super.getTinggiKerucut();
+    double tinggi = tinggiKerucutTerpancung;
     double rAtas = super.getJariJari();
     double rBawah = jarijariKecil;
     double sisiMiring = Math.sqrt(Math.pow(rBawah - rAtas, 2) + tinggi * tinggi);
