@@ -24,7 +24,7 @@ public class PrismaPP extends PersegiPanjang implements Benda3D{
         return PersegiPanjang.luasPersegiPanjang * tinggiPrismaPP;
     }
     
-    public double menghitungVolume(double luasAlas){
+    public double menghitungVolume(double panjang, double lebar){
         return super.menghitungLuas(panjang, lebar) * tinggiPrismaPP;
     }
 
