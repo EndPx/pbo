@@ -23,4 +23,9 @@ public class Ellips implements Benda2D {
     public double menghitungLuas() {
         return Math.PI * (sumbuMayor/2) * (sumbuMinor/2);
     }
+
+    @Override
+    public double menghitungKeliling() {
+        return Math.PI * Math.sqrt(2 * (sumbuMayor/2) * (sumbuMayor/2) + (sumbuMinor/2) * (sumbuMinor/2));
+    }
 }
