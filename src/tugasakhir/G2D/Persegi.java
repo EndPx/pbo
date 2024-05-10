@@ -12,18 +12,20 @@ import tugasakhir.Benda2D;
  * @author abaym
  */
 public class Persegi implements Benda2D {
-    private double sisi;
+    public double sisi;
+    public static double luasPersegi;
 
     public Persegi(double sisi) {
         this.sisi = sisi;
     }
-   
-    public double getSisi() {
-        return this.sisi;
-    }
 
     @Override
     public double menghitungLuas() {
+        luasPersegi = Math.pow(sisi, 2);
+        return luasPersegi;
+    }
+    
+    public double menghitungLuas(double sisi){
         return Math.pow(sisi, 2);
     }
     
