@@ -21,16 +21,19 @@ public class Tabung extends Lingkaran implements Benda3D {
 
     @Override
     public double menghitungVolume() {
-        return menghitungLuas() * tinggiTabung;
+        return Lingkaran.luasLingkaran * tinggiTabung;
     }
 
-    public double menghitungVolume(double luasAlas) {
-        return luasAlas * tinggiTabung;
+    public double menghitungVolume(double r) {
+        return super.menghitungLuas(r) * tinggiTabung;
     }
 
     @Override
     public double menghitungLuasPermukaan() {
-        double luasPermukaan = 2 * Math.PI * super.getJariJari() * (super.getJariJari() + tinggiTabung);
-        return luasPermukaan;
+        return Lingkaran.kelilingLingkaran * (super.jariJari + tinggiTabung);
+    }
+    
+    public double menghitungLuasPermukaan(double r) {
+        return menghitungKeliling(r) * (super.jariJari + tinggiTabung);
     }
 }
