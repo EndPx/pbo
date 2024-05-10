@@ -12,36 +12,36 @@ import tugasakhir.G2D.Lingkaran;
  */
 public class Kerucut extends Lingkaran implements Benda3D {
 
-    private double tinggiKerucut;
+    public double tinggiKerucut;
+    public static double luasPermukaanKerucut;
+    public static double volumeKerucut;
     
     public Kerucut(double jariJari, double tinggiKerucut) {
         super(jariJari);
         this.tinggiKerucut = tinggiKerucut;
     }
-    
-    public double getTinggiKerucut(){
-        return tinggiKerucut;
-    }
 
      @Override
     public double menghitungVolume() {
-        return (1.0/3) * menghitungLuas() * tinggiKerucut;
+        volumeKerucut = (1.0/3) * Lingkaran.luasLingkaran * tinggiKerucut;
+        return volumeKerucut;
     }
 
-    public double menghitungVolume(double luasAlas) {
-        return (1.0/3) * luasAlas * tinggiKerucut;
+    public double menghitungVolume(double r, double tinggiKerucut) {
+        return (1.0/3) * super.menghitungLuas(r) * tinggiKerucut;
     }
 
     @Override
     public double menghitungLuasPermukaan() {
-        double sisiMiring = Math.sqrt(Math.pow(super.getJariJari(),2) + Math.pow(tinggiKerucut,2));
-        double luasSelimut = Math.PI * super.getJariJari() * sisiMiring;
-        return super.menghitungLuas() + luasSelimut;
+        double sisiMiring = Math.sqrt(Math.pow(super.jariJari,2) + Math.pow(tinggiKerucut,2));
+        double luasSelimut = Math.PI * super.jariJari * sisiMiring;
+        luasPermukaanKerucut = Lingkaran.luasLingkaran + luasSelimut;
+        return luasPermukaanKerucut;
     }
 
-    public double menghitungLuasPermukaan(double luasAlas) {
-        double sisiMiring = Math.sqrt(Math.pow(super.getJariJari(),2) + Math.pow(tinggiKerucut,2));
-        double luasSelimut = Math.PI * super.getJariJari() * sisiMiring;
-        return luasAlas + luasSelimut;
+    public double menghitungLuasPermukaan(double r) {
+        double sisiMiring = Math.sqrt(Math.pow(r,2) + Math.pow(tinggiKerucut,2));
+        double luasSelimut = Math.PI * r * sisiMiring;
+        return super.menghitungLuas(r) + luasSelimut;
     }
 }
