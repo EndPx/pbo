@@ -25,5 +25,12 @@ public class Trapesium implements Benda2D{
     public double menghitungLuas() {
         return 0.5 * ((this.alasAtas+this.alasBawah)*this.tinggi);
     }
+
+    @Override
+    public double menghitungKeliling() {
+        double sisiA = Math.sqrt(Math.pow(alasBawah - alasAtas, 2) + Math.pow(tinggi, 2));
+        double sisiB = Math.sqrt(Math.pow(alasBawah + alasAtas, 2) + Math.pow(tinggi, 2));
+        return alasBawah + alasAtas + sisiA + sisiB;
+    }
     
 }
