@@ -18,19 +18,19 @@ public class Juring extends Bola implements Benda3D {
     
     @Override
     public double menghitungVolume() {
-        return (sudut/360) * super.menghitungVolume();
+        return (sudut/360.0) * super.volumeBola;
     }
     
-    public double menghitungVolume(double volumeBola) {
-        return (sudut/360) * volumeBola;
+    public double menghitungVolume(double r) {
+        return (sudut/360.0) * super.menghitungVolume(r);
     }
 
     @Override
     public double menghitungLuasPermukaan() {
-        return (sudut/360) * super.menghitungLuasPermukaan();
+        return (sudut/360.0) * super.luasPermukaanBola;
     }
     
-    public double menghitungLuasPermukaan(double luasPermukaanBola) {
-        return (sudut/360) * luasPermukaanBola;
+    public double menghitungLuasPermukaan(double r) {
+        return (sudut/360.0) * super.menghitungLuasPermukaan(r);
     }
 }
