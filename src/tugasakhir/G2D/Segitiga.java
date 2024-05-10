@@ -30,4 +30,9 @@ public class Segitiga implements Benda2D {
     public double menghitungLuas(double alas, double tinggi){
         return 0.5 * alas * tinggi;
     }
+
+    @Override
+    public double menghitungKeliling() {
+       return alas + tinggi + (Math.sqrt(Math.pow(alas, 2) + Math.pow(tinggi, 2)));
+    }
 }
