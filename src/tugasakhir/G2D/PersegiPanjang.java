@@ -12,23 +12,26 @@ import tugasakhir.Benda2D;
  * @author abaym
  */
 public class PersegiPanjang implements Benda2D {
-    private double panjang;
-    private double lebar;
+    public double panjang;
+    public double lebar;
+    public static double luasPersegiPanjang;
 
     public PersegiPanjang(double panjang, double lebar){
         this.panjang = panjang;
         this.lebar = lebar;
     }
-    public double getPanjang(){
-        return panjang;
-    }
-    public double getLebar(){
-        return lebar;
-    }
     
     @Override
     public double menghitungLuas() {
+        luasPersegiPanjang = panjang * lebar;
+        return luasPersegiPanjang;
+    }
+    
+    public double menghitungLuas(double panjang, double lebar){
         return panjang * lebar;
     }
     
+    public double menghitungKeliling(double panjang, double lebar){
+        return 2 *(panjang + lebar);
+    }
 }
