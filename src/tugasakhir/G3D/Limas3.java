@@ -34,7 +34,7 @@ public class Limas3 extends Segitiga implements Benda3D {
     public double menghitungLuasPermukaan() {
         double sisiTegak = Math.sqrt(Segitiga.luasSegitiga * super.tinggi + Math.pow(tinggiLimas,2));
         double luasSelimut = 0.5 * sisiTegak * Segitiga.luasSegitiga * 3;
-        return super.menghitungLuas() + luasSelimut;
+        return Segitiga.luasSegitiga + luasSelimut;
     }
 
     public double menghitungLuasPermukaan(double alas, double tinggi) {
