@@ -19,19 +19,19 @@ public class Kubus extends Persegi implements Benda3D {
 
     @Override
     public double menghitungVolume() {
-        return Math.pow(super.getSisi(), 3);
+        return Persegi.luasPersegi*super.sisi;
     }
     
-    public double menghitungVolume(double luasAlas){
-        return luasAlas*super.getSisi();
+    public double menghitungVolume(double sisi){
+        return super.menghitungLuas(sisi) * super.sisi;
     }
 
     @Override
     public double menghitungLuasPermukaan() {
-        return 6 * super.menghitungLuas();
+        return 6 * Persegi.luasPersegi;
     }
     
-    public double menghitungLuasPermukaan(double luasAlas) {
-        return 6 * luasAlas;
+    public double menghitungLuasPermukaan(double sisi) {
+        return 6 * menghitungLuas(sisi);
     }
 }
