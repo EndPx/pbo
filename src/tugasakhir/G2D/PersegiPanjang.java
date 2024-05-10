@@ -15,6 +15,7 @@ public class PersegiPanjang implements Benda2D {
     public double panjang;
     public double lebar;
     public static double luasPersegiPanjang;
+    public static double kelilingPersegiPanjang;
 
     public PersegiPanjang(double panjang, double lebar){
         this.panjang = panjang;
@@ -31,7 +32,14 @@ public class PersegiPanjang implements Benda2D {
         return panjang * lebar;
     }
     
+    @Override
+    public double menghitungKeliling(){
+        kelilingPersegiPanjang = 2 *(panjang + lebar);
+        return kelilingPersegiPanjang;
+    }
+    
     public double menghitungKeliling(double panjang, double lebar){
         return 2 *(panjang + lebar);
     }
+    
 }
