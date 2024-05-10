@@ -14,6 +14,7 @@ import tugasakhir.Benda2D;
 public class Persegi implements Benda2D {
     public double sisi;
     public static double luasPersegi;
+    public static double kelilingPersegi;
 
     public Persegi(double sisi) {
         this.sisi = sisi;
@@ -29,7 +30,13 @@ public class Persegi implements Benda2D {
         return Math.pow(sisi, 2);
     }
     
+    @Override
     public double menghitungKeliling(){
+        kelilingPersegi = this.sisi*4;
+        return kelilingPersegi;
+    }
+    
+    public double menghitungKeliling(double sisi){
         return this.sisi*4;
     }
 }
