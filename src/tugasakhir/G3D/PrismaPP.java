@@ -21,29 +21,29 @@ public class PrismaPP extends PersegiPanjang implements Benda3D{
 
     @Override
     public double menghitungVolume() {
-        return menghitungLuas() * tinggiPrismaPP;
+        return PersegiPanjang.luasPersegiPanjang * tinggiPrismaPP;
     }
     
     public double menghitungVolume(double luasAlas){
-        return luasAlas * tinggiPrismaPP;
+        return super.menghitungLuas(panjang, lebar) * tinggiPrismaPP;
     }
 
     @Override
     public double menghitungLuasPermukaan() {
-        double luasAlas = super.menghitungLuas();
+        double luasAlas = PersegiPanjang.luasPersegiPanjang;
         double luasSelimut1 = 2 * luasAlas;
-        double luasSamping = super.getLebar() * tinggiPrismaPP;
+        double luasSamping = super.lebar * tinggiPrismaPP;
         double luasSelimut2 = 2 * luasSamping;
-        double luasDepan = super.getPanjang() * tinggiPrismaPP;
+        double luasDepan = super.panjang * tinggiPrismaPP;
         double luasSelimut3 = 2 * luasDepan;
         return luasSelimut1 + luasSelimut2 + luasSelimut3;
     }
 
-    public double menghitungLuasPermukaan(double luasAlas) {
-        double luasSelimut1 = 2 * luasAlas;
-        double luasSamping = super.getLebar() * tinggiPrismaPP;
+    public double menghitungLuasPermukaan(double panjang, double lebar) {
+        double luasSelimut1 = 2 * menghitungLuas(panjang, lebar);
+        double luasSamping = super.lebar * tinggiPrismaPP;
         double luasSelimut2 = 2 * luasSamping;
-        double luasDepan = super.getPanjang() * tinggiPrismaPP;
+        double luasDepan = super.panjang * tinggiPrismaPP;
         double luasSelimut3 = 2 * luasDepan;
         return luasSelimut1 + luasSelimut2 + luasSelimut3;
     }
