@@ -23,5 +23,10 @@ public class JajarGenjang implements Benda2D{
     public double menghitungLuas() {
         return alas * tinggi;
     }
+
+    @Override
+    public double menghitungKeliling() {
+       return 2 * (alas + tinggi);
+    }
     
 }
