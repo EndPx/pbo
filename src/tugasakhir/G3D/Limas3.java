@@ -23,23 +23,23 @@ public class Limas3 extends Segitiga implements Benda3D {
 
     @Override
     public double menghitungVolume() {
-        return (1.0/3) * menghitungLuas() * tinggiLimas;
+        return (1.0/3) * Segitiga.luasSegitiga * tinggiLimas;
     }
 
-    public double menghitungVolume(double luasAlas) {
-        return (1.0/3) * luasAlas * tinggiLimas;
+    public double menghitungVolume(double alas, double tinggi) {
+        return (1.0/3) * super.menghitungLuas(alas, tinggi) * tinggiLimas;
     }
 
     @Override
     public double menghitungLuasPermukaan() {
-        double sisiTegak = Math.sqrt(super.getAlas() * super.getTinggi() + Math.pow(tinggiLimas,2));
-        double luasSelimut = 0.5 * sisiTegak * super.getAlas() * 3;
+        double sisiTegak = Math.sqrt(Segitiga.luasSegitiga * super.tinggi + Math.pow(tinggiLimas,2));
+        double luasSelimut = 0.5 * sisiTegak * Segitiga.luasSegitiga * 3;
         return super.menghitungLuas() + luasSelimut;
     }
 
-    public double menghitungLuasPermukaan(double luasAlas) {
-        double sisiTegak = Math.sqrt(super.getAlas() * super.getTinggi() + Math.pow(tinggiLimas,2));
-        double luasSelimut = 0.5 * sisiTegak * super.getAlas() * 3;
-        return luasAlas + luasSelimut;
+    public double menghitungLuasPermukaan(double alas, double tinggi) {
+        double sisiTegak = Math.sqrt(super.menghitungLuas(alas, tinggi) * tinggi + Math.pow(tinggiLimas,2));
+        double luasSelimut = 0.5 * sisiTegak * super.menghitungLuas(alas, tinggi) * 3;
+        return super.menghitungLuas(alas, tinggi) + luasSelimut;
     }
 }
