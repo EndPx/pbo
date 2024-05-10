@@ -12,24 +12,28 @@ import tugasakhir.G2D.Lingkaran;
  * @author abaym
  */
 public class Bola extends Lingkaran implements Benda3D{
+    public static double luasPermukaanBola;
+    public static double volumeBola;
     public Bola(double jariJari) {
         super(jariJari);
     }
     @Override
     public double menghitungVolume() {
-        return (4.0 / 3.0) * Math.PI * Math.pow(super.getJariJari(), 3);
+        volumeBola = (4.0 / 3.0) * Lingkaran.luasLingkaran * super.jariJari;
+        return volumeBola;
     }
     
-    public double menghitungVolume(double luasLingkaran){
-        return (4.0 / 3.0) * luasLingkaran * super.getJariJari();
+    public double menghitungVolume(double r){
+        return (4.0 / 3.0) * menghitungLuas(r) * r;
     }
     
     @Override
     public double menghitungLuasPermukaan() {
-        return 4 * menghitungLuas();
+        luasPermukaanBola = 4 * Lingkaran.luasLingkaran;
+        return luasPermukaanBola;
     }
     
-    public double menghitungLuasPermukaan(double luasLingkaran){
-        return 4 * luasLingkaran;
+    public double menghitungLuasPermukaan(double r){
+        return 4 * menghitungLuas(r);
     }
 }
