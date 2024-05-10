@@ -20,7 +20,7 @@ public class PrismaP extends Persegi implements Benda3D {
 
     @Override
     public double menghitungVolume() {
-        return Math.pow(super.sisi, 3);
+        return Persegi.luasPersegi*super.sisi;
     }
     
     public double menghitungVolume(double sisi){
