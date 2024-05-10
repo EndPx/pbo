@@ -22,24 +22,23 @@ public class Prisma3 extends Segitiga implements Benda3D {
 
     @Override
     public double menghitungVolume() {
-        double luasAlas = menghitungLuas();
-        return menghitungLuas() * tinggiPrisma;
+        return Segitiga.luasSegitiga * tinggiPrisma;
     }
 
-    public double menghitungVolume(double luasAlas) {
-        return luasAlas * tinggiPrisma;
+    public double menghitungVolume(double alas, double tinggi) {
+        return super.menghitungLuas(alas, tinggi) * tinggiPrisma;
     }
 
     @Override
     public double menghitungLuasPermukaan() {
-        double luasSegitigaSisiTegak = 0.5 * super.getAlas() * tinggiPrisma; // Menghitung luas segitiga sisi tegak
+        double luasSegitigaSisiTegak = 0.5 * Segitiga.luasSegitiga * tinggiPrisma; 
         double luasSelimut = luasSegitigaSisiTegak * 3;
-        return  super.menghitungLuas() + luasSelimut;
+        return  Segitiga.luasSegitiga + luasSelimut;
     }
 
-    public double menghitungLuasPermukaan(double luasAlas) {
-        double luasSegitigaSisiTegak = 0.5 * super.getAlas() * tinggiPrisma;
+    public double menghitungLuasPermukaan(double alas, double tinggi) {
+        double luasSegitigaSisiTegak = 0.5 * super.menghitungLuas(alas, tinggi) * tinggiPrisma;
         double luasSelimut = luasSegitigaSisiTegak * 3;
-        return luasAlas + luasSelimut;
+        return super.menghitungLuas(alas, tinggi) + luasSelimut;
     }
 }
