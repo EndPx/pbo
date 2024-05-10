@@ -11,4 +11,5 @@ package tugasakhir;
  */
 public interface Benda2D {
     double menghitungLuas();
+    double menghitungKeliling();
 }
