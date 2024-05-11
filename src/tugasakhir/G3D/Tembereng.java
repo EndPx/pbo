@@ -5,7 +5,7 @@
  */
 package tugasakhir.G3D;
 import tugasakhir.Benda3D;
-import tugasakhir.G2D.Lingkaran;
+
 
 /**
  *
@@ -15,22 +15,29 @@ import tugasakhir.G2D.Lingkaran;
 public class Tembereng extends Bola implements Benda3D{
     
     private double tinggiTembereng;
-    private double derajatTembereng;
+    private double sudutTembereng;
     
-    public Tembereng(double jariJari, double tinggiTembereng, double derajatTembereng) {
+    public Tembereng(double jariJari, double tinggiTembereng, double sudutTembereng) {
         super(jariJari);
         this.tinggiTembereng = tinggiTembereng;
-        this.derajatTembereng = derajatTembereng;
+        this.sudutTembereng = sudutTembereng;
     }
     
 
     @Override
     public double menghitungVolume() {
-        return 1 / 3 * Math.PI * Math.pow(tinggiTembereng, 2) * (3 * super.getJariJari() - tinggiTembereng);
+        return (sudutTembereng/360.0) * (super.volumeBola - (1 / 3) * Math.PI * Math.pow(super.getJariJari(), 2));
     }
+    public double menghitungVolume(double r) {
+        return (sudutTembereng/360.0) * (super.menghitungVolume(r) - (1 / 3) * Math.PI * Math.pow(super.getJariJari(), 2));
+    }
+
 
     @Override
     public double menghitungLuasPermukaan() {
-        return derajatTembereng / 360 * Math.PI * Math.pow(super.getJariJari(), 2);
+        return (sudutTembereng/360.0) * (super.luasPermukaanBola - Math.PI * Math.pow(super.getJariJari(), 2));
+    }
+    public double menghitungLuasPermukaan(double r) {
+        return (sudutTembereng/360.0) * (super.menghitungLuasPermukaan(r) - Math.PI * Math.pow(super.getJariJari(), 2));
     }
 }
