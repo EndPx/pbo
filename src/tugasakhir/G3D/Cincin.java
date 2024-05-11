@@ -14,7 +14,8 @@ public class Cincin extends Bola implements Benda3D {
 
     private double jarijariKecil;
     private double sudutCincin;
-    public Tabung(double jariJari, double jarijariKecil, double sudutCincin) {
+    
+    public Cincin(double jariJari, double jarijariKecil, double sudutCincin) {
         super(jariJari);
         this.sudutCincin = sudutCincin;
         this.jarijariKecil = jarijariKecil;
@@ -22,27 +23,21 @@ public class Cincin extends Bola implements Benda3D {
 
      @Override
     public double menghitungVolume() {
-        return (sudutCincin / 360.0) * (super.volumeBola - super.menghitungVolume(jarijariKecil));
+        return (sudutCincin / 360.0) * (Bola.volumeBola - super.menghitungVolume(jarijariKecil));
     }
 
-    public double menghitungVolume(double r) {
+    public double menghitungVolume(double sudutCincin, double r, double jarijariKecil) {
         return (sudutCincin / 360.0) * (super.menghitungVolume(r) - super.menghitungVolume(jarijariKecil));
     }
 
     @Override
     public double menghitungLuasPermukaan() {
-        double luasPenutup = (menghitungLuas() - Math.PI * Math.pow(jarijariDalam,2)) * 2;
-        double luasSelimutBesar = 2 * Math.PI * super.getJariJari() * tinggiCincin;
-        double luasSelimutKecil = 2 * Math.PI * jarijariDalam * tinggiCincin;
-        double luasPermukaan = luasPenutup + luasSelimutBesar + luasSelimutKecil;
+        double luasPermukaan = (sudutCincin / 360.0) * (Bola.luasPermukaanBola - super.menghitungLuasPermukaan(jarijariKecil));
         return luasPermukaan;
     }
 
-    public double menghitungLuasPermukaan(double luasAlas) {
-        double luasPenutup = (menghitungLuas() - Math.PI * Math.pow(jarijariDalam,2)) * 2;
-        double luasSelimutBesar = 2 * Math.PI * super.getJariJari() * tinggiCincin;
-        double luasSelimutKecil = 2 * Math.PI * jarijariDalam * tinggiCincin;
-        double luasPermukaan = luasPenutup + luasSelimutBesar + luasSelimutKecil;
+    public double menghitungLuasPermukaan(double sudutCincin, double jariJari, double jarijariKecil) {
+        double luasPermukaan = (sudutCincin / 360.0) * (super.menghitungLuasPermukaan(jariJari) - super.menghitungLuasPermukaan(jarijariKecil));
         return luasPermukaan;
     }
 }
