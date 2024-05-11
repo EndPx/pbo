@@ -14,12 +14,12 @@ import tugasakhir.Benda3D;
 
 public class Tembereng extends Bola implements Benda3D{
     
-    private double tinggiTembereng;
+    
     private double sudutTembereng;
     
-    public Tembereng(double jariJari, double tinggiTembereng, double sudutTembereng) {
+    public Tembereng(double jariJari, double sudutTembereng) {
         super(jariJari);
-        this.tinggiTembereng = tinggiTembereng;
+        
         this.sudutTembereng = sudutTembereng;
     }
     
