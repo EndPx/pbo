@@ -5,34 +5,28 @@
  */
 package tugasakhir.G3D;
 import tugasakhir.Benda3D;
-import tugasakhir.G2D.Lingkaran;
-import tugasakhir.G3D.Bola;
+
 /**
  *
  * @author abaym
  */
 public class Cincin extends Bola implements Benda3D {
 
-    private double tinggiCincin;
-    private double jarijariDalam;
-    
-    public Tabung(double jariJari, double tinggiCincin, double jarijariDalam) {
+    private double jarijariKecil;
+    private double sudutCincin;
+    public Tabung(double jariJari, double jarijariKecil, double sudutCincin) {
         super(jariJari);
-        this.tinggiCincin = tinggiCincin;
-        this.jarijariDalam = jarijariDalam;
+        this.sudutCincin = sudutCincin;
+        this.jarijariKecil = jarijariKecil;
     }
 
      @Override
     public double menghitungVolume() {
-        double volumeBesar = menghitungLuas() * tinggiCincin;
-        double volumeKecil = Math.PI * Math.pow(jarijariDalam,2) * tinggiCincin;
-        return volumeBesar - volumeKecil;
+        return (sudutCincin / 360.0) * (super.volumeBola - super.menghitungVolume(jarijariKecil));
     }
 
-    public double menghitungVolume(double luasAlas) {
-        double volumeBesar = luasAlas * tinggiCincin;
-        double volumeKecil = Math.PI * Math.pow(jarijariDalam,2) * tinggiCincin;
-        return volumeBesar - volumeKecil;
+    public double menghitungVolume(double r) {
+        return (sudutCincin / 360.0) * (super.menghitungVolume(r) - super.menghitungVolume(jarijariKecil));
     }
 
     @Override
