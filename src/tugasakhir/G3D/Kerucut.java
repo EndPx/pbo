@@ -39,7 +39,7 @@ public class Kerucut extends Lingkaran implements Benda3D {
         return luasPermukaanKerucut;
     }
 
-    public double menghitungLuasPermukaan(double r) {
+    public double menghitungLuasPermukaan(double r, double tinggiKerucut) {
         double sisiMiring = Math.sqrt(Math.pow(r,2) + Math.pow(tinggiKerucut,2));
         double luasSelimut = Math.PI * r * sisiMiring;
         return super.menghitungLuas(r) + luasSelimut;
